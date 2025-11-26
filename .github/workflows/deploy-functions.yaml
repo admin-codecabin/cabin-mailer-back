@@ -21,3 +21,4 @@ jobs:
           version: latest
       - run: supabase functions deploy send-email-bulk --project-ref $PROJECT_ID
       - run: supabase functions deploy ses-webhook --project-ref $PROJECT_ID
+      - run: supabase functions deploy check-campaigns-then-enqueue --project-ref $PROJECT_ID
