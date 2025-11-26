@@ -18,7 +18,7 @@ Deno.serve(async (req)=>{
         .from("campaigns")
         .select("id, subject, content_html, content_text, scheduled_at, tenant_id")
         .lte("scheduled_at", now)
-        // .eq('status', 'SCHEDULED');
+        .eq('status', 'SCHEDULED');
 
     console.log("all: campaigns to process:", campaigns);
     for (const campaign of campaigns) {
