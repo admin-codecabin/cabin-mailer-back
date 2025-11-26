@@ -5,8 +5,6 @@ const supabase = createClient(Deno.env.get("SUPABASE_URL") ?? "", Deno.env.get("
 Deno.serve(async (req)=>{
   const res = await req.json();
   const campaign_recipient_ids = res.mail.tags.campaign_recipient_id;
-  console.log("campaign_recipient_ids:", campaign_recipient_ids);
-  console.log("res.mail.tags:", res.mail.tags);
   for (const campaign_recipient_id of campaign_recipient_ids){
     console.log("campaign_recipient_id:", campaign_recipient_id);
     const { data: recipient } = await supabase.from("campaign_recipients").select('id, campaign_id, tenant_id').eq('id', campaign_recipient_id).single();
