@@ -1,0 +1,17 @@
+{
+  "name": "codecabin-mailer-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:db": "supabase start",
+    "dev:function": "supabase functions serve pgmq-automation-handler --no-verify-jwt",
+    "dev": "npm-run-all -p dev:db dev:function"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.49.1"
+  }
+}

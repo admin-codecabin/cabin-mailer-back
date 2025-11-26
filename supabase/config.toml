@@ -1,0 +1,2 @@
+[functions.pgmq-read-q-event-step]   
+verify_jwt = false
