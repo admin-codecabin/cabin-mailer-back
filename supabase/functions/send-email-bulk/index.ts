@@ -12,7 +12,7 @@ const supabase = createClient(supabaseURL, supabase_service_role_key);
 
 Deno.serve(async (req)=>{
      const { data: queuedCampaigns, error } = await supabase.rpc("read_bulk_email_chunks", {
-        vt_seconds: 1, //hide for 5 minutes 
+        vt_seconds: 300, //hide for 5 minutes 
         batch_size: 1
     });
 
